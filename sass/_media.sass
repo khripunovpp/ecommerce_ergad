@@ -30,6 +30,18 @@
 		max-width: 320px
 		padding: 0 10px
 
+	.b-top
+		padding: 7px 0
+		&__pic,
+		&__price,
+		&__discount,
+		&__timer
+			display: none
+		&__title
+			width: 150px
+			margin: 0 15px 0 0
+			font-size: 12px
+
 	.b-product
 		display: block
 		&__gallery,
@@ -54,6 +66,22 @@
 	.b-product
 		padding: 16px 10px 0
 
+	.b-info
+		&__cost,
+		&__timer,
+		&__coupon,
+		&__colors,
+		&__quantity
+			margin-bottom: 15px
+		&__timer
+			padding: 9px
+		&__buttons
+			font-size: 0
+		&__btn
+			width: 48%
+			&+&
+				margin-left: 4%
+
 	.b-cost
 		&__label
 			font-size: 14px
@@ -71,3 +99,79 @@
 			b
 				font-size: 16px
 				line-height: 22px
+
+	.b-timer
+		&__text
+			font-size: 14px
+			width: 100px
+			vertical-align: middle
+		&__nums
+			vertical-align: middle
+		&__num
+			font-size: 30px
+		&__section
+			&--colon
+				font-size: 30px
+				margin: 0 2px
+
+	.b-coupon
+		&__link
+			font-size: 14px
+			margin: 0 0 7px
+		&__wrapper
+			padding: 15px
+		&__right
+			width: 100px
+		&__label
+			font-size: 14px
+		&__status
+			font-size: 14px
+			margin: 0
+		&__count
+			width: auto
+			text-align: center
+			padding: 8px
+			font-size: 14px
+
+	.b-colors
+		&__label
+			font-size: 14px
+			margin-right: 9px
+		&__list
+			vertical-align: top
+		&__item
+			display: block
+			&+&
+				margin-left: 0
+				margin-top: 12px
+	
+	.b-quantity
+		&__label
+			font-size: 14px
+			margin-right: 9px
+		&__left
+			font-size: 14px
+			width: 100px
+			vertical-align: middle
+
+	.b-counter
+		padding: 5px
+		&__count
+			font-size: 14px
+
+	.b-btn
+		height: 50px
+		&--buy
+			font-size: 18px
+			padding: 14px
+			.b-btn
+				&__icon
+					display: none
+		&--paypal
+			padding-left: 14px
+			padding-right: 14px
+			.b-btn
+				&__icon
+					width: 77px
+					height: 20px
+					margin: 2px auto 0

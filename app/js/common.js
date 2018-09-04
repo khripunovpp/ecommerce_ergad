@@ -117,8 +117,6 @@ var fixedTop = function(scroll) {
         triggerOffset = $(triggerEl).offset(),
         triggerOffsetTop = triggerOffset.top;
 
-    console.log(scroll, triggerOffsetTop)
-
     if (scroll > triggerOffsetTop) {
         $(el).addClass(fixedClasss)
     } else {
@@ -127,6 +125,7 @@ var fixedTop = function(scroll) {
 }
 
 $(function() {
+	
     $(".b-gallery__list").slick({
         slidesToShow: 1,
         slidesToScroll: 1,

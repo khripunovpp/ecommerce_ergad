@@ -774,6 +774,17 @@ select::-ms-expand {
     max-width: 320px;
     padding: 0 10px;
   }
+  .b-top {
+    padding: 7px 0;
+  }
+  .b-top__pic, .b-top__price, .b-top__discount, .b-top__timer {
+    display: none;
+  }
+  .b-top__title {
+    width: 150px;
+    margin: 0 15px 0 0;
+    font-size: 12px;
+  }
   .b-product {
     display: block;
   }
@@ -800,6 +811,21 @@ select::-ms-expand {
   .b-product {
     padding: 16px 10px 0;
   }
+  .b-info__cost, .b-info__timer, .b-info__coupon, .b-info__colors, .b-info__quantity {
+    margin-bottom: 15px;
+  }
+  .b-info__timer {
+    padding: 9px;
+  }
+  .b-info__buttons {
+    font-size: 0;
+  }
+  .b-info__btn {
+    width: 48%;
+  }
+  .b-info__btn + .b-info__btn {
+    margin-left: 4%;
+  }
   .b-cost__label {
     font-size: 14px;
     margin-right: 9px;
@@ -820,5 +846,91 @@ select::-ms-expand {
   .b-cost__discount b {
     font-size: 16px;
     line-height: 22px;
+  }
+  .b-timer__text {
+    font-size: 14px;
+    width: 100px;
+    vertical-align: middle;
+  }
+  .b-timer__nums {
+    vertical-align: middle;
+  }
+  .b-timer__num {
+    font-size: 30px;
+  }
+  .b-timer__section--colon {
+    font-size: 30px;
+    margin: 0 2px;
+  }
+  .b-coupon__link {
+    font-size: 14px;
+    margin: 0 0 7px;
+  }
+  .b-coupon__wrapper {
+    padding: 15px;
+  }
+  .b-coupon__right {
+    width: 100px;
+  }
+  .b-coupon__label {
+    font-size: 14px;
+  }
+  .b-coupon__status {
+    font-size: 14px;
+    margin: 0;
+  }
+  .b-coupon__count {
+    width: auto;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+  }
+  .b-colors__label {
+    font-size: 14px;
+    margin-right: 9px;
+  }
+  .b-colors__list {
+    vertical-align: top;
+  }
+  .b-colors__item {
+    display: block;
+  }
+  .b-colors__item + .b-colors__item {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+  .b-quantity__label {
+    font-size: 14px;
+    margin-right: 9px;
+  }
+  .b-quantity__left {
+    font-size: 14px;
+    width: 100px;
+    vertical-align: middle;
+  }
+  .b-counter {
+    padding: 5px;
+  }
+  .b-counter__count {
+    font-size: 14px;
+  }
+  .b-btn {
+    height: 50px;
+  }
+  .b-btn--buy {
+    font-size: 18px;
+    padding: 14px;
+  }
+  .b-btn--buy .b-btn__icon {
+    display: none;
+  }
+  .b-btn--paypal {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .b-btn--paypal .b-btn__icon {
+    width: 77px;
+    height: 20px;
+    margin: 2px auto 0;
   }
 }
