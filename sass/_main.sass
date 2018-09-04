@@ -73,6 +73,24 @@
 		font-size: 18px
 		color: #797A7B
 		padding: 18px 66px
+		cursor: pointer
 		&.active
 			color: #000
 			background-color: #fff
+
+.b-content
+	&__part
+		display: none
+		&:first-of-type
+			display: block
+	&__wrap
+		@extend %grid
+		direction: rtl
+		padding: 45px 30px
+	&__pics,
+	&__main
+		@extend %part
+		direction: ltr
+	&__pics
+		width: 400px
+		padding-left: 40px

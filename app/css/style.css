@@ -70,13 +70,13 @@ select::-ms-expand {
   margin: 0 auto;
 }
 
-.b-product, .b-info__timer, .b-coupon__wrapper, .b-buyerInfo__inner {
+.b-content__wrap, .b-product, .b-info__timer, .b-coupon__wrapper, .b-buyerInfo__inner {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
 
-.b-product__gallery, .b-product__info, .b-timer__text, .b-timer__nums, .b-coupon__left, .b-coupon__right, .b-buyerInfo__title, .b-buyerInfo__list {
+.b-content__pics, .b-content__main, .b-product__gallery, .b-product__info, .b-timer__text, .b-timer__nums, .b-coupon__left, .b-coupon__right, .b-buyerInfo__title, .b-buyerInfo__list {
   display: table-cell;
   vertical-align: top;
 }
@@ -208,11 +208,34 @@ select::-ms-expand {
   font-size: 18px;
   color: #797A7B;
   padding: 18px 66px;
+  cursor: pointer;
 }
 
 .b-tabs__item.active {
   color: #000;
   background-color: #fff;
+}
+
+.b-content__part {
+  display: none;
+}
+
+.b-content__part:first-of-type {
+  display: block;
+}
+
+.b-content__wrap {
+  direction: rtl;
+  padding: 45px 30px;
+}
+
+.b-content__pics, .b-content__main {
+  direction: ltr;
+}
+
+.b-content__pics {
+  width: 400px;
+  padding-left: 40px;
 }
 
 .b-product {
