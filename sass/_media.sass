@@ -1,12 +1,73 @@
 @import "bourbon"
 
+@media only screen and (max-width: 1199px)
+	.b-product
+		&__gallery
+			width: 50%
 
-/* Desktop-frist */
-@media only screen and (max-width : 991px)
-	/**/
+	.b-gallery
+		&__item
+			height: 310px
 
+@media only screen and (max-width: 1099px)
+	.b-product
+		&__gallery
+			width: 47%
 
-/* Mobile-first */
-@media only screen and (min-width : 992px)
-	/**/
+	.b-gallery
+		&__item
+			height: 235px
 
+	.b-thumbs
+		&__item
+			img
+				height: 50px
+			&+&
+				margin-left: 15px
+
+@media only screen and (max-width: 991px)
+	%container
+		max-width: 320px
+		padding: 0 10px
+
+	.b-product
+		display: block
+		&__gallery,
+		&__info
+			display: block
+		&__info
+			padding-left: 0
+
+	.b-header
+		&__title
+			font-size: 20px
+		&__icon
+			width: 30px
+			margin-right: 5px
+
+	.b-title
+		text-align: center
+		h1
+			font-size: 20px
+			margin: 12px 0 9px
+
+	.b-product
+		padding: 16px 10px 0
+
+	.b-cost
+		&__label
+			font-size: 14px
+			margin-right: 9px
+		&__oldprice
+			font-size: 16px
+			margin-right: 10px
+		&__newprice
+			font-size: 24px
+		&__discount
+			font-size: 0
+			bottom: 5px
+			width: 42px
+			margin-left: 9px
+			b
+				font-size: 16px
+				line-height: 22px

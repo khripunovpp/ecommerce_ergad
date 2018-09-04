@@ -50,7 +50,6 @@ var _countDown = function(elem) {
     }, timerTime);
 }
 
-
 var timer = function(timer) {
     var _currentDate = new Date();
     var count = 15;
@@ -91,7 +90,7 @@ var quantityChoiser = function() {
     var minusBtnEl = '.b-counter__minus',
         plusBtnEl = '.b-counter__plus',
         countEl = '.b-counter__count',
-        maxCount = 11;
+        maxCount = $('.b-counter').data('max');
 
     $(minusBtnEl).on('click', function(event) {
         event.preventDefault();
@@ -109,6 +108,22 @@ var quantityChoiser = function() {
 
         if (currentCount < maxCount) $(countEl).text(+currentCount + 1);
     });
+}
+
+var fixedTop = function(scroll) {
+    var el = '.b-top',
+        fixedClasss = 'showed',
+        triggerEl = '.b-info__buttons',
+        triggerOffset = $(triggerEl).offset(),
+        triggerOffsetTop = triggerOffset.top;
+
+    console.log(scroll, triggerOffsetTop)
+
+    if (scroll > triggerOffsetTop) {
+        $(el).addClass(fixedClasss)
+    } else {
+        $(el).removeClass(fixedClasss)
+    }
 }
 
 $(function() {
@@ -137,5 +152,9 @@ $(function() {
     colorChoiser()
 
     quantityChoiser()
+
+    $(window).on('scroll resize', function(event) {
+        fixedTop($(this).scrollTop());
+    });
 
 });
