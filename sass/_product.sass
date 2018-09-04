@@ -1,0 +1,276 @@
+.b-product
+	padding: 30px
+	@extend %grid
+	&__gallery,
+	&__info
+		@extend %part
+	&__gallery
+		width: 640px
+	&__info
+		padding-left: 30px
+
+.b-info
+	&__cost
+		margin-bottom: 30px
+	&__timer,
+	&__coupon,
+	&__colors,
+	&__quantity
+		margin-bottom: 25px
+
+
+.b-cost
+	&__label
+		display: inline-block
+		font-size: 18px
+		margin: 0 20px 0 0
+	&__prices
+		display: inline-block
+	&__oldprice
+		display: inline-block
+		font-size: 30px
+		color: #C4C4C4
+		text-decoration: line-through
+		margin-right: 20px
+	&__newprice
+		display: inline-block
+		font-size: 60px
+		color: #000
+		font-weight: 700
+	&__discount
+		display: inline-block
+		margin-left: 17px
+		font-size: 12px
+		vertical-align: bottom
+		position: relative
+		bottom: 16px
+		b
+			display: block
+			background: #FF0000;
+			border-radius: 3px
+			color: #fff
+			line-height: 27px
+			font-weight: 300
+			font-size: 18px
+			text-align: center
+			margin-top: 1px
+
+.b-timer
+	padding: 12px 25px
+	border: 2px solid #CDDDE6
+	border-radius: 3px
+	@extend %grid
+	&__text
+		font-size: 18px
+		line-height: 1.3
+		width: 130px
+		margin: 0
+		@extend %part
+		vertical-align: middle
+		text-align: left
+		b
+			display: block
+			color: #ff0000
+	&__nums
+		@extend %part
+		line-height: 1
+		text-align: right
+	&__section
+		display: inline-block
+		text-align: center
+		&--colon
+			font-size: 50px
+			color: #FF0000
+			margin: 0 8px
+			vertical-align: top
+	&__num
+		color: #ff0000
+		font-size: 50px
+		font-weight: 400
+	&__sign
+		display: block
+		font-size: 12px
+		text-transform: capitalize
+		font-weight: 400
+		opacity: .5
+
+.b-coupon
+	&__link
+		color: #0091FF
+		font-size: 16px
+		margin: 0 0 10px
+	&__wrapper
+		background: #EDF1F2
+		border: 2px dashed #CDDDE6
+		border-radius: 3px
+		padding: 18px
+		@extend %grid
+	&__left,
+	&__right
+		@extend %part
+		vertical-align: middle
+	&__label
+		font-size: 18px
+		margin: 0
+	&__name
+		margin-left: 10px
+	&__status
+		margin: 5px 0 0
+		font-size: 18px
+		font-weight: 700
+	&__count
+		width: 200px
+		padding: 10px 22px
+		margin: 0
+		color: #005E8E
+		font-size: 26px
+		font-weight: 700
+		text-transform: uppercase
+		background-color: #fff
+		border-radius: 3px
+
+.b-colors
+	&__label
+		display: inline-block
+		font-size: 18px
+		line-height: 25px
+		margin: 0 20px 0 0
+	&__list
+		display: inline-block
+	&__item
+		padding-left: 60px
+		position: relative
+		cursor: pointer
+		line-height: 25px
+		color: #C4C4C4
+		&::after,
+		&::before
+			content: ''
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			border-radius: 50%
+		&::after
+			left: 25px
+			width: 25px
+			height: 25px
+			border: 5px solid
+			transition: all .2s
+		&::before
+			left: 0
+			width: 15px
+			height: 15px
+			background-color: #EDF1F2
+			border: 4px solid #EDF1F2
+		&.active
+			color: #000
+			&::after
+				background-color: currentcolor
+			&::before
+				background-color: #000
+		&+&
+			margin-left: 30px
+		&--1
+			&::after
+				color: #0091FF
+		&--2
+			&::after
+				color: #FF0000
+		&--3
+			&::after
+				color: #2FCF8C
+
+.b-quantity
+	&__label
+		font-size: 18px
+		margin: 0 20px 0 0
+		display: inline-block
+	&__counter
+		display: inline-block
+		vertical-align: middle
+		margin-right: 20px
+	&__left
+		display: inline-block
+		font-size: 18px
+		strong
+			color: #ff0000
+
+.b-counter
+	background-color: #EDF1F2
+	border-radius: 3px
+	padding: 10px
+	font-size: 0
+	&__minus,
+	&__plus
+		display: inline-block
+		vertical-align: middle
+		width: 20px
+		height: 20px
+		background-color: #fff
+		border-radius: 50%
+		padding: 0
+		border: none
+		cursor: pointer
+		color: #C4C4C4
+		&::after
+			@extend %icon
+			font-size: 10px
+			line-height: 20px
+		&:hover
+			color: #000
+	&__minus
+		&::after
+			content: '\e907'
+	&__plus
+		&::after
+			content: '\e908'
+	&__count
+		display: inline-block
+		vertical-align: middle
+		font-size: 18px
+		font-weight: 700
+		margin: 0 13px
+
+.b-btn
+	display: inline-block
+	vertical-align: middle
+	border-radius: 50px
+	height: 60px
+	cursor: pointer
+	transition: all .4s
+	&+&
+		margin-left: 20px
+	&:hover
+		transform: scale(1.1)
+	&--buy
+		background-color: #FFD500
+		border: none
+		font-size: 22px
+		font-family: $font
+		text-transform: uppercase
+		font-weight: 700
+		padding-left: 32px
+		padding-right: 32px
+		.b-btn
+			&__icon
+				display: inline-block
+				vertical-align: middle
+				margin-right: 15px
+				&::before
+					content: '\e902'
+					@extend %icon
+	&--paypal
+		font-size: 12px
+		border: 2px solid #0091FF
+		background-color: #EDF1F2
+		padding: 0 35px
+		.b-btn
+			&__icon
+				display: block
+				width: 110px
+				height: 29px
+				margin-top: 2px
+				background-image: url(../img/icon-paypal.png)
+				background-repeat: no-repeat
+				background-position: 50% 50%
+				background-size: cover
