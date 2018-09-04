@@ -192,6 +192,29 @@ select::-ms-expand {
   border-radius: 5px;
 }
 
+.b-tabs {
+  background-color: #F6F8F9;
+  border: 1px solid #CDDDE6;
+  border-left: none;
+  border-right: none;
+  font-size: 0;
+}
+
+.b-tabs__item {
+  display: inline-block;
+  border: none;
+  background-color: #F1F4F6;
+  border-right: 1px solid #CDDDE6;
+  font-size: 18px;
+  color: #797A7B;
+  padding: 18px 66px;
+}
+
+.b-tabs__item.active {
+  color: #000;
+  background-color: #fff;
+}
+
 .b-product {
   padding: 30px 30px 0;
   direction: rtl;
@@ -794,6 +817,10 @@ select::-ms-expand {
   .b-product__info {
     padding-left: 0;
   }
+  .b-product__gallery {
+    width: auto;
+    margin-top: 25px;
+  }
   .b-header__title {
     font-size: 20px;
   }
@@ -809,7 +836,7 @@ select::-ms-expand {
     margin: 12px 0 9px;
   }
   .b-product {
-    padding: 16px 10px 0;
+    padding: 15px 10px 0;
   }
   .b-info__cost, .b-info__timer, .b-info__coupon, .b-info__colors, .b-info__quantity {
     margin-bottom: 15px;
@@ -932,5 +959,64 @@ select::-ms-expand {
     width: 77px;
     height: 20px;
     margin: 2px auto 0;
+  }
+  .b-gallery__item {
+    height: auto;
+  }
+  .b-gallery__thumbs {
+    margin-top: 10px;
+    padding-right: 30px;
+  }
+  .b-gallery__next {
+    right: 5px;
+  }
+  .b-thumbs__item {
+    border-width: 2px;
+  }
+  .b-thumbs__item + .b-thumbs__item {
+    margin-left: 10px;
+  }
+  .b-buyerInfo {
+    padding: 15px 10px;
+  }
+  .b-buyerInfo__inner {
+    padding: 15px 15px 0;
+    display: block;
+  }
+  .b-buyerInfo__title {
+    display: block;
+    width: auto;
+    padding-left: 40px;
+    margin: 0 0 15px;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .b-buyerInfo__title::before {
+    font-size: 30px;
+  }
+  .b-buyerInfo__title br {
+    display: none;
+  }
+  .b-buyerInfo__list {
+    display: block;
+    overflow: auto;
+  }
+  .b-buyerInfo__item {
+    display: block;
+    width: 50%;
+    min-height: 70px;
+    font-size: 14px;
+    line-height: normal;
+    margin: 5px 0;
+    padding-left: 24px;
+  }
+  .b-buyerInfo__item:nth-child(odd) {
+    width: 47%;
+    margin-right: 3%;
+  }
+  .b-buyerInfo__item::before {
+    font-size: 14px;
+    margin-top: 0;
+    top: 1px;
   }
 }

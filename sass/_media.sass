@@ -49,6 +49,9 @@
 			display: block
 		&__info
 			padding-left: 0
+		&__gallery
+			width: auto	
+			margin-top: 25px	
 
 	.b-header
 		&__title
@@ -64,7 +67,7 @@
 			margin: 12px 0 9px
 
 	.b-product
-		padding: 16px 10px 0
+		padding: 15px 10px 0
 
 	.b-info
 		&__cost,
@@ -175,3 +178,53 @@
 					width: 77px
 					height: 20px
 					margin: 2px auto 0
+
+	.b-gallery
+		&__item
+			height: auto
+		&__thumbs
+			margin-top: 10px
+			padding-right: 30px	
+		&__next
+			right: 5px	
+
+	.b-thumbs
+		&__item
+			border-width: 2px	
+			&+&
+				margin-left: 10px	
+
+	.b-buyerInfo
+		padding: 15px 10px
+		&__inner
+			padding: 15px 15px 0
+			display: block
+		&__title
+			display: block
+			width: auto
+			padding-left: 40px
+			margin: 0 0 15px
+			font-size: 14px
+			line-height: 30px
+			&::before
+				font-size: 30px
+			br
+				display: none
+		&__list
+			display: block
+			overflow: auto
+		&__item
+			display: block
+			width: 50%
+			min-height: 70px
+			font-size: 14px
+			line-height: normal
+			margin: 5px 0
+			padding-left: 24px
+			&:nth-child(odd)
+				width: 47%
+				margin-right: 3%
+			&::before
+				font-size: 14px
+				margin-top: 0
+				top: 1px
