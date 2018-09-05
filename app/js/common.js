@@ -178,50 +178,141 @@ var setDates = function(classEl) {
 
 var addReview = function(form) {
 
-    var filesNames = [];
+    var filesNames = [],
+        overlayEl = '#overlay',
+        popupEl = '.b-popup',
+        ststus = 0;
 
     $('.b-formReview__fileField').on('change', function() {
-        for (var i = 0; i < $(this).get(0).files.length; ++i) {
-            filesNames.push($(this).get(0).files[i].name);
+
+        var hasUploads = $('.b-formReview__fileName').length;
+
+        if (hasUploads == 0) {
+            getFilesNames(this)
+            showFilesNames('.b-formReview__upload', filesNames)
+        } else {
+            getFilesNames(this)
+            showFilesNames('.b-formReview__upload', filesNames, true)
         }
-        showFilesName('.b-formReview__upload', filesNames)
     });
 
-    function showFilesName(wrap, files) {
+    function getFilesNames(input) {
+        for (var i = 0; i < $(input).get(0).files.length; ++i) {
+            filesNames.push($(input).get(0).files[i].name);
+        }
+    }
+
+    function showFilesNames(wrap, files, clean) {
+        if (clean) {
+            $('.b-formReview__fileName').each(function() {
+                $(this).remove()
+            })
+        }
         files.forEach(function(item) {
-            $(wrap).append('<p class="b-formReview__fileName">' + item + '</p>')
+            $(wrap).prepend('<p class="b-formReview__fileName">' + item + '</p>')
         })
     }
 
+    function deleteFile() {
+        var elIndex = $(this).index(),
+            reverseArr = filesNames.reverse();
+
+        $(this).remove();
+
+        reverseArr.splice(elIndex, 1);
+
+        filesNames = reverseArr.reverse();
+    }
+
     function getData(event) {
+
         event.preventDefault()
 
         function toJSONString(formT) {
             var obj = {};
-            var elements = formT.querySelectorAll("input:not([type='file']), select, textarea");
-            for (var i = 0; i < elements.length; ++i) {
-                var element = elements[i];
-                var name = element.name;
-                var value = element.value;
+            var elements = $("input[type='text'], input[type='radio']:checked", formT);
 
+            $(elements).each(function() {
+                var name = $(this).prop('name');
+                var value = $(this).val();
                 if (name) {
                     obj[name] = value;
                 }
-            }
+            })
+
 
             return JSON.stringify(obj);
         }
 
-     var json = toJSONString(form);
+        var json = JSON.parse(toJSONString(form));
 
-        console.log(json)
+        json.files = filesNames;
+        makeComment(json)
     }
 
-    function sendReview(data) {
+    function makeComment(data) {
+        ststus = 1;
+        hidePopup();
 
+        form.reset()
+        var commentTemplate = $('.js-comment-template .b-feedback').get(),
+            title = data.title,
+            overall = data.overall,
+            price = data.price,
+            quality = data.quality,
+            appearance = data.appearance;
+
+
+        console.log(data)
+
+        function setStars(count) {
+            var starsString = "";
+            for (var i = 1; i <= 5; i++) {
+                if (i <= count) {
+                    starsString = starsString + "<span class='b-metrics__star selected'></span>";
+                } else {
+                    starsString = starsString + "<span class='b-metrics__star'></span>";
+                }
+            }
+
+            return starsString;
+        }
+
+        $(commentTemplate).find('.b-feedback__lead').append(title)
+        $(commentTemplate).find('.b-metrics__item--overall .b-metrics__stars').html(setStars(overall))
+        $(commentTemplate).find('.b-metrics__item--price .b-metrics__stars').html(setStars(price))
+        $(commentTemplate).find('.b-metrics__item--quality .b-metrics__stars').html(setStars(quality))
+        $(commentTemplate).find('.b-metrics__item--appearance .b-metrics__stars').html(setStars(appearance))
+
+        function sendComment() {
+            $('.b-comments__list').append(commentTemplate)
+        }
+
+        setTimeout(function() {
+            sendComment()
+        }, 400)
     }
+
+    function hidePopup() {
+        $(popupEl).fadeOut(200, function() {
+            $(overlayEl).fadeOut(200, function() {
+                form.reset()
+            })
+        })
+    }
+
+    function showPopup() {
+        $(popupEl).removeAttr('style')
+        $(overlayEl).fadeIn(400, function() {
+            $(popupEl).addClass('showed')
+        })
+    }
+
+    $('body').on('click', '.b-comments__btn', showPopup);
 
     $('.b-formReview__btn').on('click', getData);
+
+    $('body').on('click', '.b-formReview__fileName', deleteFile);
 }
 
 

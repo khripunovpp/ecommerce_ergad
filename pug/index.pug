@@ -189,7 +189,7 @@ html
 														p.b-feedback__name A***e
 													.b-feedback__section.b-feedback__section--metrics
 														.b-feedback__metrics.b-metrics
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--overall
 																p.b-metrics__name Overall:
 																.b-metrics__stars 
 																	span.b-metrics__star.selected
@@ -197,7 +197,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--price
 																p.b-metrics__name Price:
 																.b-metrics__stars 
 																	span.b-metrics__star.selected
@@ -205,7 +205,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--quality
 																p.b-metrics__name Quality:
 																.b-metrics__stars
 																	span.b-metrics__star.selected
@@ -213,7 +213,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--appearance
 																p.b-metrics__name Appearance:
 																.b-metrics__stars
 																	span.b-metrics__star.selected
@@ -236,7 +236,7 @@ html
 														p.b-feedback__name A***e
 													.b-feedback__section.b-feedback__section--metrics
 														.b-feedback__metrics.b-metrics
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--overall
 																p.b-metrics__name Overall:
 																.b-metrics__stars 
 																	span.b-metrics__star.selected
@@ -244,7 +244,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--price
 																p.b-metrics__name Price:
 																.b-metrics__stars 
 																	span.b-metrics__star.selected
@@ -252,7 +252,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--quality
 																p.b-metrics__name Quality:
 																.b-metrics__stars
 																	span.b-metrics__star.selected
@@ -260,7 +260,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--appearance
 																p.b-metrics__name Appearance:
 																.b-metrics__stars
 																	span.b-metrics__star.selected
@@ -285,7 +285,7 @@ html
 														p.b-feedback__name A***e
 													.b-feedback__section.b-feedback__section--metrics
 														.b-feedback__metrics.b-metrics
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--overall
 																p.b-metrics__name Overall:
 																.b-metrics__stars 
 																	span.b-metrics__star.selected
@@ -293,7 +293,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--price
 																p.b-metrics__name Price:
 																.b-metrics__stars 
 																	span.b-metrics__star.selected
@@ -301,7 +301,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--quality
 																p.b-metrics__name Quality:
 																.b-metrics__stars
 																	span.b-metrics__star.selected
@@ -309,7 +309,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--appearance
 																p.b-metrics__name Appearance:
 																.b-metrics__stars
 																	span.b-metrics__star.selected
@@ -334,7 +334,7 @@ html
 														p.b-feedback__name A***e
 													.b-feedback__section.b-feedback__section--metrics
 														.b-feedback__metrics.b-metrics
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--overall
 																p.b-metrics__name Overall:
 																.b-metrics__stars 
 																	span.b-metrics__star.selected
@@ -342,7 +342,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--price
 																p.b-metrics__name Price:
 																.b-metrics__stars 
 																	span.b-metrics__star.selected
@@ -350,7 +350,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--quality
 																p.b-metrics__name Quality:
 																.b-metrics__stars
 																	span.b-metrics__star.selected
@@ -358,7 +358,7 @@ html
 																	span.b-metrics__star.selected
 																	span.b-metrics__star.selected
 																	span.b-metrics__star
-															.b-metrics__item
+															.b-metrics__item.b-metrics__item--appearance
 																p.b-metrics__name Appearance:
 																.b-metrics__stars
 																	span.b-metrics__star.selected
@@ -405,15 +405,15 @@ html
 				.b-popup__inner
 					.b-popup__wrap
 						.b-popup__header
-							p.b-popup__caption
+							p.b-popup__caption Add review
 						.b-popup__tail
 							form(action="", method="POST").b-popup__formReview.b-formReview
 								.b-formReview__item
-									label.b-formReview__label(for="name") Name
+									label.b-formReview__label(for="title") Caption:
 									.b-formReview__wrap
-										input(type="text", id="name", name="name").b-formReview__field
+										input(type="text", id="title", name="title").b-formReview__field
 								.b-formReview__item
-									label.b-formReview__label Overall
+									label.b-formReview__label Overall:
 									.b-formReview__wrap.b-formReview__stars
 										input#rating15(type='radio', name='overall', value='5')
 										label(for='rating15') 5
@@ -426,7 +426,7 @@ html
 										input#rating11(type='radio', name='overall', value='1')
 										label(for='rating11') 1
 								.b-formReview__item
-									label.b-formReview__label Price
+									label.b-formReview__label Price:
 									.b-formReview__wrap.b-formReview__stars
 										input#rating25(type='radio', name='price', value='5')
 										label(for='rating25') 5
@@ -439,7 +439,7 @@ html
 										input#rating21(type='radio', name='price', value='1')
 										label(for='rating21') 1
 								.b-formReview__item
-									label.b-formReview__label Quality
+									label.b-formReview__label Quality:
 									.b-formReview__wrap.b-formReview__stars
 										input#rating35(type='radio', name='quality', value='5')
 										label(for='rating35') 5
@@ -452,7 +452,7 @@ html
 										input#rating31(type='radio', name='quality', value='1')
 										label(for='rating31') 1
 								.b-formReview__item
-									label.b-formReview__label Appearance
+									label.b-formReview__label Appearance:
 									.b-formReview__wrap.b-formReview__stars
 										input#rating45(type='radio', name='appearance', value='5')
 										label(for='rating45') 5
@@ -464,15 +464,60 @@ html
 										label(for='rating42') 2
 										input#rating41(type='radio', name='appearance', value='1')
 										label(for='rating41') 1
-								.b-formReview__item
-									span.b-formReview__label Add image
+								.b-formReview__item.b-formReview__item--file
+									span.b-formReview__label Add image:
 									.b-formReview__wrap.b-formReview__upload
 										input(type="file", multiple, id="files", name="files").b-formReview__fileField
-										p.b-formReview__fileName
 										label.b-formReview__addImg(for="files") Add more
 								.b-formReview__footer
-									button.b-formReview__btn Post Review
-		script(src="js/jquery.serializejson.min.js")
+									button.b-formReview__btn.b-btn.b-btn--buy Post Review
+			.js-comment-template(style="display: none !important")
+				.b-comments__item.b-feedback
+					.b-feedback__section.b-feedback__section--profile
+						img.b-feedback__ava(src="img/feedback-ava-anonim.png", alt="")
+					.b-feedback__section.b-feedback__section--metrics
+						.b-feedback__metrics.b-metrics
+							.b-metrics__item.b-metrics__item--overall
+								p.b-metrics__name Overall:
+								.b-metrics__stars 
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+							.b-metrics__item.b-metrics__item--price
+								p.b-metrics__name Price:
+								.b-metrics__stars 
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+							.b-metrics__item.b-metrics__item--quality
+								p.b-metrics__name Quality:
+								.b-metrics__stars
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+							.b-metrics__item.b-metrics__item--appearance
+								p.b-metrics__name Appearance:
+								.b-metrics__stars
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+									span.b-metrics__star
+							.b-metrics__voites
+								b.b-metrics__name Helpfull?
+								.b-metrics__thumbs
+									span.b-metrics__likes (0)
+									span.b-metrics__dislikes (0)
+					.b-feedback__section.b-feedback__section--tail
+						p.b-feedback__lead
+						p.b-feedback__date
+
 		script(src="js/slick.min.js")
 		script(src="js/jquery.countdown.min.js")
 		script(src="js/common.js")
