@@ -146,8 +146,84 @@ var tabs = function() {
         $(mainEl).html(content)
     });
 
+    $(tabItemEl).eq(0).addClass(activeTabClass).siblings(tabItemEl).removeClass(activeTabClass);
+
     $(mainEl).html(content)
 }
+
+var setDates = function(classEl) {
+    var now = new Date();
+
+    $(classEl).each(function() {
+        var daysFromToday = $(this).data('days-from-today');
+
+        now.setDate(now.getDate() + daysFromToday + 1);
+
+        var dayNum = '';
+        if (now.getDate() < 10) {
+            dayNum = '0';
+        }
+        dayNum += now.getDate();
+
+        var monthNum = '';
+        if (now.getMonth() + 1 < 10) {
+            monthNum = '0';
+        }
+        monthNum += now.getMonth() + 1;
+
+        $(this).prepend(dayNum + "." + monthNum + "." + now.getFullYear())
+
+    });
+}
+
+var addReview = function(form) {
+
+    var filesNames = [];
+
+    $('.b-formReview__fileField').on('change', function() {
+        for (var i = 0; i < $(this).get(0).files.length; ++i) {
+            filesNames.push($(this).get(0).files[i].name);
+        }
+        showFilesName('.b-formReview__upload', filesNames)
+    });
+
+    function showFilesName(wrap, files) {
+        files.forEach(function(item) {
+            $(wrap).append('<p class="b-formReview__fileName">' + item + '</p>')
+        })
+    }
+
+    function getData(event) {
+        event.preventDefault()
+
+        function toJSONString(formT) {
+            var obj = {};
+            var elements = formT.querySelectorAll("input:not([type='file']), select, textarea");
+            for (var i = 0; i < elements.length; ++i) {
+                var element = elements[i];
+                var name = element.name;
+                var value = element.value;
+
+                if (name) {
+                    obj[name] = value;
+                }
+            }
+
+            return JSON.stringify(obj);
+        }
+
+     var json = toJSONString(form);
+
+        console.log(json)
+    }
+
+    function sendReview(data) {
+
+    }
+
+    $('.b-formReview__btn').on('click', getData);
+}
+
 
 $(function() {
 
@@ -182,5 +258,9 @@ $(function() {
     });
 
     tabs()
+
+    setDates('.js-date')
+
+    addReview($('.b-formReview').get(0))
 
 });
