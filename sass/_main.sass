@@ -303,6 +303,7 @@
 		background-color: #EDF1F2
 		border-radius: 5px
 		overflow: hidden
+		position: relative
 	&__caption
 		background-color: #fff
 		margin: 0
@@ -312,6 +313,21 @@
 		font-weight: 700
 	&__tail
 		padding: 30px
+	&__close
+		position: absolute
+		top: 15px
+		right: 15px
+		width: 20px
+		height: 20px
+		background-color: #EDF1F2
+		border-radius: 50%
+		border: none
+		text-align: center
+		&::before
+			content: '\e90b'
+			@extend %icon
+			color: #777
+			line-height: 20px
 	&.showed
 		display: table
 		animation: popupIn .5s ease-out both

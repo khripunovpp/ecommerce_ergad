@@ -312,6 +312,8 @@ var addReview = function(form) {
 
     $('.b-formReview__btn').on('click', getData);
 
+    $('.b-popup__close').on('click', hidePopup);
+
     $('body').on('click', '.b-formReview__fileName', deleteFile);
 }
 
