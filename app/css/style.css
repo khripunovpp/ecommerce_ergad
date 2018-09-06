@@ -1723,6 +1723,7 @@ select::-ms-expand {
   .b-formReview__item {
     padding-left: 10px;
     padding-right: 15px;
+    min-height: 25px;
   }
   .b-formReview__footer {
     margin-top: 15px;
