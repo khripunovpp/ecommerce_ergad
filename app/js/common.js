@@ -1,3 +1,44 @@
+var randomInteger = function(min, max) {
+    var rand = min - 0.5 + Math.random() * (max - min + 1)
+    rand = Math.round(rand);
+    return rand;
+}
+
+var onResize = function(params) {
+    var _defautParams = {
+        before: function() {},
+        after: function() {},
+        breakPoint: 992
+    }
+    params = $.extend(_defautParams, params);
+
+    var a = 1,
+        b = 0,
+        flag = false,
+        stop = true;
+
+    $(window).on('resize', function() {
+        $(this).width() < params.breakPoint ?
+            b = 1 :
+            b = 0
+        a == b ?
+            flag = true :
+            flag = false
+    });
+
+    $(window).on('resize', function() {
+        if (flag && !stop) {
+            stop = true;
+            params.before();
+        }
+
+        if (!flag && stop) {
+            stop = false;
+            params.after();
+        }
+    })
+}
+
 var _countDown = function(elem) {
 
     var timerTime = 5000;
@@ -130,8 +171,7 @@ var tabs = function() {
         activeTabClass = 'active',
         contentPartEl = '.b-content__part',
         contentMainEl = '.b-content__main',
-        mainEl = '.b-content__part--main .b-content__main',
-        content = $(contentPartEl).eq(1).find(contentMainEl).html();;
+        mainEl = '.b-content__part--main .b-content__main';
 
     $(tabItemEl).on('click', function(event) {
         event.preventDefault();
@@ -146,9 +186,19 @@ var tabs = function() {
         $(mainEl).html(content)
     });
 
-    $(tabItemEl).eq(0).addClass(activeTabClass).siblings(tabItemEl).removeClass(activeTabClass);
+    init()
 
-    $(mainEl).html(content)
+    function init() {
+        var content = $(contentPartEl).eq(1).find(contentMainEl).html()
+
+        $(tabItemEl).eq(0).addClass(activeTabClass).siblings(tabItemEl).removeClass(activeTabClass);
+
+        $(mainEl).html(content)
+    }
+
+    onResize({
+        before: init
+    })
 }
 
 var setDates = function(classEl) {
@@ -260,10 +310,8 @@ var addReview = function(form) {
             overall = data.overall,
             price = data.price,
             quality = data.quality,
-            appearance = data.appearance;
-
-
-        console.log(data)
+            appearance = data.appearance,
+            userName = 'User'+randomInteger(55000,99999);
 
         function setStars(count) {
             var starsString = "";
@@ -279,6 +327,7 @@ var addReview = function(form) {
         }
 
         $(commentTemplate).find('.b-feedback__lead').append(title)
+        $(commentTemplate).find('.b-feedback__name').append(userName)
         $(commentTemplate).find('.b-metrics__item--overall .b-metrics__stars').html(setStars(overall))
         $(commentTemplate).find('.b-metrics__item--price .b-metrics__stars').html(setStars(price))
         $(commentTemplate).find('.b-metrics__item--quality .b-metrics__stars').html(setStars(quality))
@@ -317,7 +366,6 @@ var addReview = function(form) {
     $('body').on('click', '.b-formReview__fileName', deleteFile);
 }
 
-
 $(function() {
 
     $(".b-gallery__list").slick({
@@ -338,7 +386,6 @@ $(function() {
         prevArrow: '',
         variableWidth: true
     });
-
 
     timer($('.b-timer__nums'))
 

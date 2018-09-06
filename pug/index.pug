@@ -134,10 +134,11 @@ html
 										img.b-content__img(src="img/sidebar-img-1.jpg", alt="")
 										img.b-content__img(src="img/sidebar-img-2.jpg", alt="")
 									.b-content__main 
-							.b-content__part
+							.b-content__part.hide-on-mobile
 								.b-content__wrap
 									.b-content__main
 										.b-content__section
+											h2.b-content__title Description
 											h2.b-content__caption Feature:
 											ul.b-content__list
 												li HD port TV Out.
@@ -157,7 +158,7 @@ html
 											p.b-content__text Thank you.
 										.b-content__section
 											h2.b-content__caption Package included:
-											.b-content__table.b-table
+											.b-content__table.b-table.b-table--columnOnMobile
 												.b-table__tr
 													.b-table__td 1 X EKEN H9 Sport Camera WiFi
 													.b-table__td 1 X Waterproof Housing
@@ -176,11 +177,10 @@ html
 													.b-table__td 1 X Metal Tether
 												.b-table__tr
 													.b-table__td 2 X Clip
-													.b-table__td
-													.b-table__td
 							.b-content__part
 								.b-content__wrap
 									.b-content__main
+										h2.b-content__title Comments (12)
 										.b-content__comments.b-comments
 											.b-comments__list
 												.b-comments__item.b-feedback
@@ -382,6 +382,7 @@ html
 								.b-content__wrap
 									.b-content__main
 										.b-content__section
+											h2.b-content__title Shipping information
 											h2.b-content__caption EU WAREHOUSE & UK FREE
 											.b-content__marks
 												span.b-content__mark Royal mail direct
@@ -399,7 +400,8 @@ html
 													.b-table__td 7-10 Business Days
 													.b-table__td Fast Low Cost Shipping 
 			.b-footer
-				p.b-footer__text 2018. Camerastarter. All rights reserved. #[a(href="") Terms of use.]
+				.container
+					p.b-footer__text 2018. Camerastarter. All rights reserved. #[a(href="") Terms of use.]
 			#overlay
 			.b-popup
 				.b-popup__inner
@@ -476,6 +478,7 @@ html
 				.b-comments__item.b-feedback
 					.b-feedback__section.b-feedback__section--profile
 						img.b-feedback__ava(src="img/feedback-ava-anonim.png", alt="")
+						p.b-feedback__name
 					.b-feedback__section.b-feedback__section--metrics
 						.b-feedback__metrics.b-metrics
 							.b-metrics__item.b-metrics__item--overall
