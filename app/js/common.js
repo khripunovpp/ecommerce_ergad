@@ -120,34 +120,62 @@ var colorChoiser = function() {
         activeClaass = 'active';
 
     $(colorEl).on('click', function(event) {
-        event.preventDefault();
 
         $(this).addClass(activeClaass).siblings(colorEl).removeClass(activeClaass);
 
     });
 }
 
+var couponChecker = function() {
+    var couponFieldEl = '.b-coupon__field',
+        couponLinkEl = '.b-coupon__link',
+        couponCodes = ['lucky40'],
+        deliveryCountEl = '.js-delivery-count',
+        deliveryStatusEl = '.b-delivery__status';
+
+    $(couponFieldEl).on('blur keyup', function(event) {
+        var value = $(this).val();
+
+        if (event.type == 'blur' || event.keyCode == 13 || event.which == 13) {
+            checkValue(value)
+        }
+    });
+
+    function checkValue(value) {
+        couponCodes.forEach(function(item) {
+            if (value == item) {
+                setDelivery()
+            }
+        })
+    }
+
+    function setDelivery() {
+        $(deliveryCountEl).text(0)
+        $(deliveryStatusEl).addClass('applied')
+    }
+}
+
 var quantityChoiser = function() {
     var minusBtnEl = '.b-counter__minus',
         plusBtnEl = '.b-counter__plus',
         countEl = '.b-counter__count',
-        maxCount = $('.b-counter').data('max');
+        maxCount = $(countEl).data('max');
 
     $(minusBtnEl).on('click', function(event) {
         event.preventDefault();
 
-        var currentCount = $(countEl).text();
+        var currentCount = $(countEl).val();
 
-        if (currentCount > 0) $(countEl).text(+currentCount - 1);
+        if (currentCount > 0) $(countEl).val(+currentCount - 1);
 
     });
 
     $(plusBtnEl).on('click', function(event) {
         event.preventDefault();
 
-        var currentCount = $(countEl).text();
+        var currentCount = $(countEl).val();
 
-        if (currentCount < maxCount) $(countEl).text(+currentCount + 1);
+        if (currentCount < maxCount) $(countEl).val(+currentCount + 1);
     });
 }
 
@@ -311,7 +339,7 @@ var addReview = function(form) {
             price = data.price,
             quality = data.quality,
             appearance = data.appearance,
-            userName = 'User'+randomInteger(55000,99999);
+            userName = 'User' + randomInteger(55000, 99999);
 
         function setStars(count) {
             var starsString = "";

@@ -977,7 +977,7 @@ select::-ms-expand {
 .b-quantity__counter {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .b-quantity__left {

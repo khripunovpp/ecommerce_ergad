@@ -111,8 +111,6 @@
 	&__right
 		@extend %part
 		vertical-align: middle
-	&__left
-		padding-right: 9px
 	&__label
 		font-size: 18px
 		margin: 0
@@ -184,6 +182,8 @@
 		&--3
 			&::after
 				color: #2FCF8C
+		input[type=radio]
+			display: none
 
 .b-quantity
 	&__label
@@ -235,7 +235,11 @@
 		vertical-align: middle
 		font-size: 18px
 		font-weight: 700
-		margin: 0 13px
+		margin: 0 7px
+		width: 28px
+		text-align: center
+		background-color: transparent
+		border: none
 
 .b-btn
 	display: inline-block
@@ -321,16 +325,13 @@
 		position: relative
 		&:nth-child(odd)
 			width: 60%
-		&:nth-child(1)
+		&--1
 			&::before
 				content: '\e905'
-		&:nth-child(2)
+		&--3
 			&::before
 				content: '\e904'
-		&:nth-child(3)
-			&::before
-				content: '\e905'
-		&:nth-child(4)
+		&--4
 			&::before
 				content: '\e906'
 		&::before

@@ -856,10 +856,6 @@ select::-ms-expand {
   vertical-align: middle;
 }
 
-.b-coupon__left {
-  padding-right: 9px;
-}
-
 .b-coupon__label {
   font-size: 18px;
   margin: 0;
@@ -965,6 +961,10 @@ select::-ms-expand {
   color: #2FCF8C;
 }
 
+.b-colors__item input[type=radio] {
+  display: none;
+}
+
 .b-quantity__label {
   font-size: 18px;
   margin: 0 20px 0 0;
@@ -1031,7 +1031,11 @@ select::-ms-expand {
   vertical-align: middle;
   font-size: 18px;
   font-weight: 700;
-  margin: 0 13px;
+  margin: 0 7px;
+  width: 28px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
 }
 
 .b-btn {
@@ -1151,19 +1155,15 @@ select::-ms-expand {
   width: 60%;
 }
 
-.b-buyerInfo__item:nth-child(1)::before {
+.b-buyerInfo__item--1::before {
   content: '\e905';
 }
 
-.b-buyerInfo__item:nth-child(2)::before {
+.b-buyerInfo__item--3::before {
   content: '\e904';
 }
 
-.b-buyerInfo__item:nth-child(3)::before {
-  content: '\e905';
-}
-
-.b-buyerInfo__item:nth-child(4)::before {
+.b-buyerInfo__item--4::before {
   content: '\e906';
 }
 
@@ -1182,6 +1182,7 @@ select::-ms-expand {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   overflow: hidden;
+  font-size: 0;
 }
 
 .b-gallery__wrap {
@@ -1242,10 +1243,22 @@ select::-ms-expand {
   transition: all .3s;
   position: relative;
   cursor: pointer;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
 }
 
 .b-thumbs__item + .b-thumbs__item {
   margin-left: 20px;
+}
+
+.b-thumbs__item img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.b-thumbs__item--video {
+  width: 180px;
 }
 
 .b-thumbs__item--video::after {
@@ -1305,6 +1318,32 @@ select::-ms-expand {
   }
 }
 
+@-webkit-keyframes applied {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes applied {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
 @media only screen and (max-width: 1199px) {
   .b-product__gallery {
     width: 50%;
@@ -1330,8 +1369,12 @@ select::-ms-expand {
   .b-gallery__item {
     height: 235px;
   }
-  .b-thumbs__item img {
+  .b-thumbs__item {
+    width: 50px;
     height: 50px;
+  }
+  .b-thumbs__item--video {
+    width: 90px;
   }
   .b-thumbs__item + .b-thumbs__item {
     margin-left: 15px;
