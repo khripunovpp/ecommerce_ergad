@@ -387,7 +387,6 @@
 	&__label,
 	&__wrap
 		@extend %part
-		vertical-align: baseline
 	&__label
 		text-align: right
 		font-size: 16px
@@ -421,6 +420,7 @@
 		padding-right: 30px
 		position: relative
 		cursor: pointer
+		margin: 0
 		&::after
 			content: '\e90b'
 			@extend %icon
@@ -435,6 +435,10 @@
 			font-size: 9px
 			line-height: 15px
 			border-radius: 50%
+		&+&
+			margin-top: 10px
+		& + .b-formReview__addImg
+				margin-top: 10px
 	&__footer
 		border-top: 1px solid #CDDDE5
 		margin-top: 30px

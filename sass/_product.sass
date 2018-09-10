@@ -111,6 +111,8 @@
 	&__right
 		@extend %part
 		vertical-align: middle
+	&__left
+		padding-right: 9px
 	&__label
 		font-size: 18px
 		margin: 0
@@ -195,6 +197,7 @@
 	&__left
 		display: inline-block
 		font-size: 18px
+		vertical-align: middle
 		strong
 			color: #ff0000
 
@@ -249,6 +252,7 @@
 		background-color: #FFD500
 		border: none
 		font-size: 22px
+		line-height: 1
 		font-family: $font
 		text-transform: uppercase
 		font-weight: 700
@@ -262,6 +266,9 @@
 				&::before
 					content: '\e902'
 					@extend %icon
+			&__text
+				display: inline-block
+				vertical-align: middle
 	&--paypal
 		font-size: 12px
 		border: 2px solid #0091FF

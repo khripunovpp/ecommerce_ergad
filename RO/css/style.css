@@ -634,6 +634,10 @@ select::-ms-expand {
   margin-top: 10px;
 }
 
+.b-formReview__label, .b-formReview__wrap {
+  vertical-align: top;
+}
+
 .b-formReview__label {
   text-align: right;
   font-size: 16px;
@@ -656,7 +660,7 @@ select::-ms-expand {
 }
 
 .b-formReview__addImg {
-  font-size: 18px;
+  font-size: 15px;
   text-transform: uppercase;
   background-color: #CDDDE5;
   -webkit-border-radius: 50px;
@@ -667,7 +671,6 @@ select::-ms-expand {
   vertical-align: middle;
   text-align: center;
   width: 100%;
-  max-width: 130px;
 }
 
 .b-formReview__fileName {
@@ -678,6 +681,10 @@ select::-ms-expand {
   position: relative;
   cursor: pointer;
   margin: 0;
+}
+
+.b-formReview__fileName + .b-formReview__fileName {
+  margin-top: 10px;
 }
 
 .b-formReview__fileName::after {
@@ -694,10 +701,6 @@ select::-ms-expand {
   line-height: 15px;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-}
-
-.b-formReview__fileName + .b-formReview__fileName {
-  margin-top: 10px;
 }
 
 .b-formReview__fileName + .b-formReview__addImg {
@@ -880,7 +883,7 @@ select::-ms-expand {
   padding: 10px 22px;
   margin: 0;
   color: #005E8E;
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 700;
   text-transform: uppercase;
   background-color: #fff;
@@ -950,7 +953,7 @@ select::-ms-expand {
 }
 
 .b-colors__item + .b-colors__item {
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .b-colors__item--1::after {
@@ -1059,7 +1062,7 @@ select::-ms-expand {
 .b-btn--buy {
   background-color: #FFD500;
   border: none;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -1074,13 +1077,13 @@ select::-ms-expand {
   margin-right: 15px;
 }
 
-.b-btn--buy .b-btn__icon::before {
-  content: '\e902';
-}
-
 .b-btn--buy .b-btn__text {
   display: inline-block;
   vertical-align: middle;
+}
+
+.b-btn--buy .b-btn__icon::before {
+  content: '\e902';
 }
 
 .b-btn--paypal {
@@ -1148,7 +1151,7 @@ select::-ms-expand {
 }
 
 .b-buyerInfo__item:nth-child(odd) {
-  width: 60%;
+  width: 57%;
 }
 
 .b-buyerInfo__item:nth-child(1)::before {
@@ -1461,8 +1464,8 @@ select::-ms-expand {
   }
   .b-coupon__count {
     width: auto;
-    padding: 8px;
-    font-size: 14px;
+    padding: 6px;
+    font-size: 13px;
   }
   .b-colors__label {
     font-size: 14px;
@@ -1492,9 +1495,6 @@ select::-ms-expand {
   }
   .b-counter__count {
     font-size: 14px;
-  }
-  .b-btn {
-    height: 50px;
   }
   .b-btn--buy {
     font-size: 18px;
@@ -1538,7 +1538,7 @@ select::-ms-expand {
     margin-bottom: 15px;
   }
   .b-buyerInfo__inner {
-    padding: 15px 15px 0;
+    padding: 15px;
     display: block;
   }
   .b-buyerInfo__title {
@@ -1562,7 +1562,7 @@ select::-ms-expand {
   .b-buyerInfo__item {
     display: block;
     width: 50%;
-    min-height: 70px;
+    min-height: 85px;
     font-size: 14px;
     line-height: normal;
     margin: 5px 0;
