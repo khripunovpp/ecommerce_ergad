@@ -384,9 +384,15 @@
 		min-height: 32px
 		&+&
 			margin-top: 10px
+		&--file
+			.b-formReview
+				&__label,
+				&__wrap
+					vertical-align: top
 	&__label,
 	&__wrap
 		@extend %part
+		vertical-align: middle
 	&__label
 		text-align: right
 		font-size: 16px
@@ -401,6 +407,8 @@
 		padding: 7px 10px
 		border-radius: 3px
 		font-size: 16px
+		display: inline-block
+		vertical-align: middle
 	&__addImg
 		font-size: 18px
 		text-transform: uppercase
