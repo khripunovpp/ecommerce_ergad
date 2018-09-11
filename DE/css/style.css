@@ -181,7 +181,7 @@ select::-ms-expand {
     font-weight: 700;
     max-width: 400px;
     margin: 0;
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 .b-top__price {
@@ -190,7 +190,7 @@ select::-ms-expand {
 }
 
 .b-top__timer {
-    margin: 0 22px;
+    margin: 0 20px;
 }
 
 .b-top__timer .b-timer__num {
@@ -713,7 +713,7 @@ select::-ms-expand {
 }
 
 .b-formReview__addImg {
-    font-size: 14px;
+    font-size: 15px;
     text-transform: uppercase;
     background-color: #CDDDE5;
     -webkit-border-radius: 50px;
@@ -874,7 +874,6 @@ select::-ms-expand {
 
 .b-timer__section {
     display: inline-block;
-    vertical-align: top;
     text-align: center;
 }
 
@@ -897,8 +896,6 @@ select::-ms-expand {
     text-transform: capitalize;
     font-weight: 400;
     opacity: .5;
-    -ms-word-break: break-all;
-    word-break: break-all;
 }
 
 .b-coupon__link {
@@ -920,10 +917,6 @@ select::-ms-expand {
     vertical-align: middle;
 }
 
-.b-coupon__left {
-    padding-right: 8px;
-}
-
 .b-coupon__label {
     font-size: 18px;
     margin: 0;
@@ -940,10 +933,11 @@ select::-ms-expand {
 }
 
 .b-coupon__count {
+    width: 200px;
     padding: 10px 22px;
     margin: 0;
     color: #005E8E;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
     background-color: #fff;
@@ -1014,7 +1008,7 @@ select::-ms-expand {
 }
 
 .b-colors__item+.b-colors__item {
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 .b-colors__item--1::after {
@@ -1042,7 +1036,7 @@ select::-ms-expand {
 .b-quantity__counter {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 .b-quantity__left {
@@ -1185,7 +1179,7 @@ select::-ms-expand {
     background-color: #EDF1F2;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    padding: 16px 75px;
+    padding: 22px 75px;
 }
 
 .b-buyerInfo__title {
@@ -1219,11 +1213,12 @@ select::-ms-expand {
     font-size: 18px;
     padding-left: 38px;
     position: relative;
-    margin: 8px 0;  
+    margin: 8px 0;
 }
 
 .b-buyerInfo__item:nth-child(odd) {
-    width: 50%;
+    width: 45%;
+    padding-right: 2%;
 }
 
 .b-buyerInfo__item--1::before {
@@ -1560,13 +1555,9 @@ select::-ms-expand {
     .b-timer__num {
         font-size: 30px;
     }
-    .b-timer__section {
-      width: 40px;
-    }
     .b-timer__section--colon {
         font-size: 30px;
         margin: 0 2px;
-        width: auto;
     }
     .b-coupon__link {
         font-size: 14px;
@@ -1587,8 +1578,8 @@ select::-ms-expand {
     }
     .b-coupon__count {
         width: auto;
-        padding: 6px;
-        font-size: 13px;
+        padding: 8px;
+        font-size: 14px;
     }
     .b-colors__label {
         font-size: 14px;
@@ -1609,12 +1600,9 @@ select::-ms-expand {
         margin-right: 9px;
     }
     .b-quantity__left {
-        font-size: 12px;
+        font-size: 14px;
         width: 100px;
         vertical-align: middle;
-    }
-    .b-quantity__counter {
-      margin-right: 8px;
     }
     .b-counter {
         padding: 5px;
@@ -1626,8 +1614,8 @@ select::-ms-expand {
         height: 50px;
     }
     .b-btn--buy {
-        font-size: 18px;
-        padding: 9px 14px;
+        font-size: 16px;
+        padding: 8px 14px;
     }
     .b-btn--buy .b-btn__icon {
         display: none;
@@ -1768,6 +1756,8 @@ select::-ms-expand {
     }
     .b-table__td {
         padding: 10px;
+        word-wrap: break-word;
+        font-size: 14px;
     }
     .b-table__caption {
         font-size: 16px;
@@ -1794,7 +1784,6 @@ select::-ms-expand {
         display: none;
     }
     .b-comments__btn {
-        max-width: none;
         margin: 15px auto 0;
     }
     .b-feedback {
